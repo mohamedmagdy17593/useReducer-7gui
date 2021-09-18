@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Home() {
   return (
-    <Layout>
+    <Layout noBack>
       <ul className="text-xl font-bold tracking-wide">
         <li>
           <Link href="/counter">
