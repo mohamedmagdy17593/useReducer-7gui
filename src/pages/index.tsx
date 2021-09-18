@@ -1,8 +1,27 @@
+import Layout from '../modules/common/Layout/Layout';
+import Link from 'next/link';
+
 function Home() {
   return (
-    <div className="min-h-screen bg-yellow-400 flex justify-center items-center">
-      <div className="w-full max-w-4xl m-4 p-4 bg-white border-2 border-gray-900 rounded"></div>
-    </div>
+    <Layout>
+      <ul className="text-xl font-bold tracking-wide">
+        <li>
+          <Link href="/counter">
+            <a>Counter</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/temperature-converter">
+            <a>Temperature Converter</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/flight-booker">
+            <a>Flight Booker</a>
+          </Link>
+        </li>
+      </ul>
+    </Layout>
   );
 }
 
