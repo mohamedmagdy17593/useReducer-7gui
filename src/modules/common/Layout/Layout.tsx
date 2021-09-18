@@ -20,6 +20,8 @@ function Layout({ children, size = 'md', noBack = false }: LayoutProps) {
             </Link>
           </div>
         )}
+
+        {/* Card */}
         <div
           className={clsx(
             'w-full  p-4 bg-white border-2 border-gray-900 rounded-md',
@@ -33,6 +35,9 @@ function Layout({ children, size = 'md', noBack = false }: LayoutProps) {
         >
           {children}
         </div>
+
+        {/* for balancing */}
+        {!noBack && <div className="mb-2 h-6"></div>}
       </div>
     </div>
   );
