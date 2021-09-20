@@ -10,7 +10,14 @@ type LayoutProps = React.PropsWithChildren<{
 function Layout({ children, size = 'md', noBack = false }: LayoutProps) {
   return (
     <div className="min-h-screen bg-yellow-400 flex justify-center items-center">
-      <div className="flex flex-col m-4">
+      <div
+        className={clsx('flex flex-col m-4 w-full', {
+          'max-w-xs': size === 'xs',
+          'max-w-sm': size === 'sm',
+          'max-w-md': size === 'md',
+          'max-w-lg': size === 'lg',
+        })}
+      >
         {!noBack && (
           <div className="mb-2">
             <Link href="/">
@@ -24,13 +31,7 @@ function Layout({ children, size = 'md', noBack = false }: LayoutProps) {
         {/* Card */}
         <div
           className={clsx(
-            'w-full  p-4 bg-white border-2 border-gray-900 rounded-md',
-            {
-              'max-w-xs': size === 'xs',
-              'max-w-sm': size === 'sm',
-              'max-w-md': size === 'md',
-              'max-w-lg': size === 'lg',
-            },
+            'w-full p-4 bg-white border-2 border-gray-900 rounded-md',
           )}
         >
           {children}

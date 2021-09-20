@@ -4,10 +4,18 @@ import styles from './Button.module.css';
 
 type ButtonProps = React.ComponentPropsWithRef<'button'> & {
   variant?: 'primary' | 'secondary';
+  block?: boolean;
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
-  { className, children, variant = 'primary', ...rest },
+  {
+    className,
+    children,
+    variant = 'primary',
+    block = false,
+    disabled,
+    ...rest
+  },
   ref,
 ) {
   return (
@@ -16,11 +24,18 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function Button(
       className={clsx(
         styles.btn,
         {
+          // colors
           [styles.primary]: variant === 'primary',
           [styles.secondary]: variant === 'secondary',
+          // sizes
+          [styles.block]: block,
+          // disable
+          [styles.disabled]: disabled,
         },
         className,
       )}
+      disabled={disabled}
+      type="button"
       {...rest}
     >
       {children}
