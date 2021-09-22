@@ -3,20 +3,20 @@ import { useProgressBar } from '@react-aria/progress';
 import styles from './ProgressBar.module.scss';
 
 interface ProgressBarProps {
-  minValue: number;
-  maxValue: number;
+  min: number;
+  max: number;
   value: number;
 }
 
-function ProgressBar({ minValue, maxValue, value }: ProgressBarProps) {
+function ProgressBar({ min, max, value }: ProgressBarProps) {
   let { progressBarProps } = useProgressBar({
-    minValue,
-    maxValue,
+    maxValue: max,
+    minValue: min,
     value,
   });
 
   // Calculate the width of the progress bar as a percentage
-  let percentage = (value - minValue) / (maxValue - minValue);
+  let percentage = (value - min) / (max - min);
   let barWidth = `${Math.round(percentage * 100)}%`;
 
   return (
