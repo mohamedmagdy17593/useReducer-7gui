@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './Button.module.css';
+import styles from './Button.module.scss';
 
 type ButtonProps = React.ComponentPropsWithRef<'button'> & {
   variant?: 'primary' | 'secondary';

@@ -20,6 +20,11 @@ function Home() {
             <a>Flight Booker</a>
           </Link>
         </li>
+        <li>
+          <Link href="/timer">
+            <a>Timer</a>
+          </Link>
+        </li>
       </ul>
     </Layout>
   );

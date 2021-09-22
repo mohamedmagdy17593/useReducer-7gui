@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Reach UI */
+@import '@reach/slider/styles.css';
+
 @import 'react-datepicker/dist/react-datepicker.css';
 
 body {
