@@ -9,9 +9,19 @@ interface SliderProps {
   minLabel?: string;
   maxLabel?: string;
   value: number;
+  step: number;
+  onChange(value: number): void;
 }
 
-function Slider({ min, max, minLabel, maxLabel, value }: SliderProps) {
+function Slider({
+  min,
+  max,
+  minLabel,
+  maxLabel,
+  value,
+  onChange,
+  step,
+}: SliderProps) {
   return (
     <div className="flex flex-row items-center space-x-2">
       {minLabel && (
@@ -22,6 +32,8 @@ function Slider({ min, max, minLabel, maxLabel, value }: SliderProps) {
         min={min}
         max={max}
         value={value}
+        step={step}
+        onChange={onChange}
       />
       {maxLabel && (
         <span className="text-xs text-gray-500 font-bold">{maxLabel}</span>
