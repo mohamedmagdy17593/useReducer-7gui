@@ -25,6 +25,11 @@ function Home() {
             <a>Timer</a>
           </Link>
         </li>
+        <li>
+          <Link href="/crud">
+            <a>CRUD</a>
+          </Link>
+        </li>
       </ul>
     </Layout>
   );

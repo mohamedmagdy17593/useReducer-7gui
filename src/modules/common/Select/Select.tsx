@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import styles from './Select.module.css';
+import styles from './Select.module.scss';
 
 interface Option {
   label: string;
