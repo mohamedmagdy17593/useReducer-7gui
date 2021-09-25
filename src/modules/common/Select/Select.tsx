@@ -4,7 +4,7 @@ import styles from './Select.module.scss';
 
 interface Option {
   label: string;
-  value: string | number | readonly string[] | undefined;
+  value: string | number | readonly string[] | undefined | null;
 }
 
 type SelectProps = React.ComponentPropsWithRef<'select'> & {
@@ -16,7 +16,11 @@ function Select({ options, ...rest }: SelectProps) {
     <select className={clsx(styles.select)} {...rest}>
       {options.map((option, i) => {
         return (
-          <option key={i} value={option.value}>
+          <option
+            key={i}
+            // @ts-ignore
+            value={option.value}
+          >
             {option.label}
           </option>
         );
